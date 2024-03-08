@@ -1,0 +1,1182 @@
+Program.Sub.ScreenSU.Start
+gui.F_Date..create
+gui.F_Date..caption("Select Invoice Date Range")
+gui.F_Date..size(3555,2505)
+gui.F_Date..position(0,0)
+gui.F_Date..event(unload,f_date_unload)
+gui.F_Date..alwaysontop(False)
+gui.F_Date..fontname("Arial")
+gui.F_Date..fontsize(8)
+gui.F_Date..forecolor(0)
+gui.F_Date..fontstyle(,,,,)
+gui.F_Date..BackColor(-2147483633)
+gui.F_Date..controlbox(True)
+gui.F_Date..maxbutton(False)
+gui.F_Date..minbutton(True)
+gui.F_Date..mousepointer(0)
+gui.F_Date..moveable(True)
+gui.F_Date..sizeable(False)
+gui.F_Date..ShowInTaskBar(True)
+gui.F_Date..titlebar(True)
+gui.F_Date.frame1.create(frame)
+gui.F_Date.frame1.caption("")
+gui.F_Date.frame1.size(2880,1320)
+gui.F_Date.frame1.position(155,95)
+gui.F_Date.frame1.visible(True)
+gui.F_Date.frame1.fontname("Arial")
+gui.F_Date.frame1.fontsize(8)
+gui.F_Date.cmdSelect.create(button)
+gui.F_Date.cmdSelect.caption("Select")
+gui.F_Date.cmdSelect.visible(True)
+gui.F_Date.cmdSelect.size(855,375)
+gui.F_Date.cmdSelect.zorder(0)
+gui.F_Date.cmdSelect.position(145,1545)
+gui.F_Date.cmdSelect.enabled(True)
+gui.F_Date.cmdSelect.fontname("Arial")
+gui.F_Date.cmdSelect.fontsize(8)
+gui.F_Date.cmdSelect.event(click,loadDetailRecords)
+gui.F_Date.dpFrom.create(datepicker)
+gui.F_Date.dpFrom.visible(True)
+gui.F_Date.dpFrom.size(1935,285)
+gui.F_Date.dpFrom.zorder(0)
+gui.F_Date.dpFrom.position(690,200)
+gui.F_Date.dpFrom.enabled(True)
+gui.F_Date.dpFrom.parent("frame1")
+gui.F_Date.dpTo.create(datepicker)
+gui.F_Date.dpTo.visible(True)
+gui.F_Date.dpTo.size(1935,285)
+gui.F_Date.dpTo.zorder(0)
+gui.F_Date.dpTo.position(685,590)
+gui.F_Date.dpTo.enabled(True)
+gui.F_Date.dpTo.parent("frame1")
+gui.F_Date.lbl1.create(label,"From",True,495,255,1,245,190,True,0,Arial,8,-2147483633,0)
+gui.F_Date.lbl1.parent("frame1")
+gui.F_Date.lbl2.create(label,"To",True,495,255,1,260,605,True,0,Arial,8,-2147483633,0)
+gui.F_Date.lbl2.parent("frame1")
+gui.F_Date.chkShowINvoiced.create(checkbox)
+gui.F_Date.chkShowINvoiced.caption("Show Invoiced Detail Records")
+gui.F_Date.chkShowINvoiced.visible(True)
+gui.F_Date.chkShowINvoiced.size(2535,255)
+gui.F_Date.chkShowINvoiced.zorder(0)
+gui.F_Date.chkShowINvoiced.position(285,990)
+gui.F_Date.chkShowINvoiced.enabled(True)
+gui.F_Date.chkShowINvoiced.alignment(0)
+gui.F_Date.chkShowINvoiced.parent("frame1")
+gui.F_Date.chkShowINvoiced.fontname("Arial")
+gui.F_Date.chkShowINvoiced.fontsize(8)
+
+
+gui.F_Invoice..create
+gui.F_Invoice..caption("Tickets to Invoice")
+gui.F_Invoice..size(12450,6375)
+gui.F_Invoice..position(0,0)
+gui.F_Invoice..event(unload,f_invoice_unload)
+gui.F_Invoice..alwaysontop(False)
+gui.F_Invoice..fontname("Arial")
+gui.F_Invoice..fontsize(8)
+gui.F_Invoice..forecolor(0)
+gui.F_Invoice..fontstyle(,,,,)
+gui.F_Invoice..BackColor(-2147483633)
+gui.F_Invoice..controlbox(True)
+gui.F_Invoice..maxbutton(True)
+gui.F_Invoice..minbutton(True)
+gui.F_Invoice..mousepointer(0)
+gui.F_Invoice..moveable(True)
+gui.F_Invoice..sizeable(True)
+gui.F_Invoice..ShowInTaskBar(True)
+gui.F_Invoice..titlebar(True)
+gui.F_Invoice.cmdInvoice.create(button)
+gui.F_Invoice.cmdInvoice.caption("Invoice Selected")
+gui.F_Invoice.cmdInvoice.visible(True)
+gui.F_Invoice.cmdInvoice.size(1410,375)
+gui.F_Invoice.cmdInvoice.zorder(0)
+gui.F_Invoice.cmdInvoice.position(200,5400)
+gui.F_Invoice.cmdInvoice.enabled(True)
+gui.F_Invoice.cmdInvoice.fontname("Arial")
+gui.F_Invoice.cmdInvoice.fontsize(8)
+gui.F_Invoice.cmdInvoice.event(click,cmdinvoice_click)
+gui.F_Invoice.lvw1.create(listview)
+gui.F_Invoice.lvw1.view(3)
+gui.F_Invoice.lvw1.addlistviewcolumn("DetailID",750,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Customer",930,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Ship To",750,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Ticket ID",840,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Activity",1800,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Discipline",1725,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("UM",1440,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Quantity",795,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Date Completed",1335,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Invoice",1000,0)
+gui.F_Invoice.lvw1.addlistviewcolumn("Invoice Date",0,0)
+gui.F_Invoice.lvw1.visible(True)
+gui.F_Invoice.lvw1.size(12075,5160)
+gui.F_Invoice.lvw1.zorder(0)
+gui.F_Invoice.lvw1.position(100,200)
+gui.F_Invoice.lvw1.enabled(True)
+gui.F_Invoice.lvw1.fontname("Arial")
+gui.F_Invoice.lvw1.fontsize(8)
+gui.F_Invoice.cmdInvoiceAll.create(button)
+gui.F_Invoice.cmdInvoiceAll.caption("Invoice All")
+gui.F_Invoice.cmdInvoiceAll.visible(True)
+gui.F_Invoice.cmdInvoiceAll.size(1260,375)
+gui.F_Invoice.cmdInvoiceAll.zorder(0)
+gui.F_Invoice.cmdInvoiceAll.position(1710,5400)
+gui.F_Invoice.cmdInvoiceAll.enabled(True)
+gui.F_Invoice.cmdInvoiceAll.fontname("Arial")
+gui.F_Invoice.cmdInvoiceAll.fontsize(8)
+gui.F_Invoice.cmdInvoiceAll.event(click,cmdinvoiceall_click)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.ATG_TMK_TICKET_D.Define("bProc",long)
+Variable.UDT.ATG_TMK_TICKET_D.Define("Detailid",long,"DETAIL_ID")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Ticketid",long,"TICKET_ID")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Ticketline",long,"TICKET_LINE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Startdate",date,"END_DATE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Starttime",date,"END_TIME")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Enddate",date,"START_DATE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Endtime",date,"START_TIME")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Hours",double,"HOURS")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Approvalflag",boolean,"APPROVAL_FLAG")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Approvaluser",string,"APPROVAL_USER")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Billingflag",boolean,"BILLING_FLAG")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Invoiceno",string,"INVOICE_NO")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Invoicedate",string,"INVOICE_DATE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Invoicetime",string,"INVOICE_TIME")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Invoiceamount",float,"INVOICE_AMOUNT")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Employee",string,"EMPLOYEE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Lineid",long)
+Variable.UDT.ATG_TMK_TICKET_D.Define("ContractID",long,"CONTRACT_ID")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Billingunit",string,"BILLING_UNIT")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Bvalue",float,"B_VALUE")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Workcompleteflag",boolean,"WORK_COMPLETE_FLAG")
+Variable.UDT.ATG_TMK_TICKET_D.Define("Customer",String,"CUSTOMER")
+Variable.UDT.ATG_TMK_TICKET_D.Define("ShipTo",String,"SHIPTO")
+Variable.UDT.ATG_TMK_TICKET_D.Define("ActivityDesc",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("DisciplineDesc",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("bProcess",Boolean)
+Variable.UDT.ATG_TMK_TICKET_D.Define("POID",String,"PO_ID")
+Variable.UDT.ATG_TMK_TICKET_D.Define("PO",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BNAME",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BADD1",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BADD2",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BCITY",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BSTATE",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("BZIP",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SNAME",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SADD1",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SADD2",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SCITY",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SSTATE",String)
+Variable.UDT.ATG_TMK_TICKET_D.Define("SZIP",String)
+
+
+Variable.UDT.SUM_RECORDS.Define("Ticketid",long)
+Variable.UDT.SUM_RECORDS.Define("Ticketline",long)
+Variable.UDT.SUM_RECORDS.Define("ContractID",long)
+Variable.UDT.SUM_RECORDS.Define("BillingValue",Float)
+Variable.UDT.SUM_RECORDS.Define("Lineid",long)
+Variable.UDT.SUM_RECORDS.Define("Billingunit",string)
+Variable.UDT.SUM_RECORDS.Define("Customer",String)
+Variable.UDT.SUM_RECORDS.Define("ShipTo",String)
+Variable.UDT.SUM_RECORDS.Define("ActivityID",String)
+Variable.UDT.SUM_RECORDS.Define("DisciplineID",String)
+Variable.UDT.SUM_RECORDS.Define("sDetailPos",String)
+Variable.UDT.SUM_RECORDS.Define("POID",String)
+Variable.UDT.SUM_RECORDS.Define("PO",String)
+Variable.UDT.SUM_RECORDS.Define("BNAME",String)
+Variable.UDT.SUM_RECORDS.Define("BADD1",String)
+Variable.UDT.SUM_RECORDS.Define("BADD2",String)
+Variable.UDT.SUM_RECORDS.Define("BCITY",String)
+Variable.UDT.SUM_RECORDS.Define("BSTATE",String)
+Variable.UDT.SUM_RECORDS.Define("BZIP",String)
+Variable.UDT.SUM_RECORDS.Define("SNAME",String)
+Variable.UDT.SUM_RECORDS.Define("SADD1",String)
+Variable.UDT.SUM_RECORDS.Define("SADD2",String)
+Variable.UDT.SUM_RECORDS.Define("SCITY",String)
+Variable.UDT.SUM_RECORDS.Define("SSTATE",String)
+Variable.UDT.SUM_RECORDS.Define("SZIP",String)
+Variable.UDT.SUM_RECORDS.Define("Format",String)
+Variable.UDT.SUM_RECORDS.Define("Rate",String)
+Variable.UDT.SUM_RECORDS.Define("Invoiceno",string)
+Variable.UDT.SUM_RECORDS.Define("Invoicedate",string)
+Variable.UDT.SUM_RECORDS.Define("Invoicetime",string)
+Variable.UDT.SUM_RECORDS.Define("Invoiceamount",float)
+Variable.UDT.SUM_RECORDS.Define("Startdate",date)
+Variable.UDT.SUM_RECORDS.Define("Enddate",date)
+Variable.UDT.SUM_RECORDS.Define("POID",String)
+Variable.UDT.SUM_RECORDS.Define("Mode",long)
+Variable.UDT.SUM_RECORDS.Define("Assigned",Boolean)
+Variable.UDT.SUM_RECORDS.Define("SLOCATION",String)
+
+Variable.UDT.MODE_GRPS.Define("Customer",String)
+Variable.UDT.MODE_GRPS.Define("ShipTo",String)
+Variable.UDT.MODE_GRPS.Define("Moder",Long)
+Variable.UDT.MODE_GRPS.Define("Pos",String)
+
+Variable.uGlobal.uDetail.Declare("ATG_TMK_TICKET_D")
+Variable.uGlobal.uProc.Declare("SUM_RECORDS")
+Program.Sub.Definition.DefaultArgs("ProcessInvoice","iOrderID*!*iPos")
+Program.Sub.Definition.DefaultArgs("InvokeUpload","sData")
+Variable.Global.sPos.Declare(String)
+Program.Sub.Definition.DefaultArgs("UpdateDetailRecord","orderid*!*iDetailID*!*iAmount*!*sPO")
+Variable.uGlobal.Mode0.Declare("MODE_GRPS")
+Variable.uGlobal.Mode1.Declare("MODE_GRPS")
+Variable.uGlobal.Mode2.Declare("MODE_GRPS")
+Program.Sub.Definition.DefaultArgs("SeekSumRecord","Customer*!*ShipTo*!*bShipTo")
+Program.Sub.Definition.DefaultArgs("UpdateTotalApplied","iAmount*!*sPO*!*iDetailID")
+Function.Intrinsic.Debug.SetScriptVersion("1.0.180","True")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+F.odbc.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.F_Invoice.lvw1.Checkboxes(true)
+Gui.F_Date..Show
+
+Program.Sub.Main.End
+
+Program.Sub.loadDetailRecords.Start
+V.Local.squery.Declare(String)
+V.Local.iX.Declare(Long)
+V.Local.fValue.Declare(Float)
+Gui.F_Date.cmdSelect.Enabled(false)
+
+V.Local.squery.set("Select DISTINCT ATG_TMK_TICKET_L.CONTRACT_ID, ATG_TMK_TICKET_H.PO_ID, ATG_TMK_TICKET_H.CUSTOMER, ATG_TMK_TICKET_H.SHIPTO,  ATG_TMK_TICKET_D.DETAIL_ID,  ATG_TMK_TICKET_D.TICKET_ID,  ATG_TMK_TICKET_D.TICKET_LINE,  ATG_TMK_TICKET_D.START_DATE,  ATG_TMK_TICKET_D.START_TIME,  ATG_TMK_TICKET_D.END_DATE,  ATG_TMK_TICKET_D.END_TIME,  ATG_TMK_TICKET_D.HOURS,  ATG_TMK_TICKET_D.APPROVAL_FLAG,  ATG_TMK_TICKET_D.APPROVAL_USER,  ATG_TMK_TICKET_D.BILLING_FLAG,  ATG_TMK_TICKET_D.INVOICE_NO,  ATG_TMK_TICKET_D.INVOICE_DATE,  ATG_TMK_TICKET_D.INVOICE_TIME,  ATG_TMK_TICKET_D.INVOICE_AMOUNT,  ATG_TMK_TICKET_D.EMPLOYEE,  ATG_TMK_TICKET_D.BILLING_UNIT,  ATG_TMK_TICKET_D.B_VALUE,  ATG_TMK_TICKET_D.WORK_COMPLETE_FLAG")
+
+F.Intrinsic.Control.If(V.Screen.F_Date!chkShowINvoiced.Value,=,1)
+	f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H, ATG_TMK_TICKET_D,  ATG_TMK_TICKET_L  WHERE ATG_TMK_TICKET_D.TICKET_ID =  ATG_TMK_TICKET_L.TICKET_ID AND ATG_TMK_TICKET_D.TICKET_LINE =  ATG_TMK_TICKET_L.LINE AND ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.START_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID",V.Local.squery)
+'	f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H, ATG_TMK_TICKET_D,  ATG_TMK_TICKET_L  WHERE ATG_TMK_TICKET_D.TICKET_ID =  ATG_TMK_TICKET_L.TICKET_ID AND ATG_TMK_TICKET_D.TICKET_LINE =  ATG_TMK_TICKET_L.LINE AND ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.END_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID",V.Local.squery)
+F.Intrinsic.Control.Else
+	f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H,  ATG_TMK_TICKET_D,  ATG_TMK_TICKET_L WHERE  ATG_TMK_TICKET_D.TICKET_ID =  ATG_TMK_TICKET_L.TICKET_ID AND ATG_TMK_TICKET_D.TICKET_LINE =  ATG_TMK_TICKET_L.LINE AND ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.START_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID and IFNULL(INVOICE_NO,'Y')= 'Y'",V.Local.squery)
+'	f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H,  ATG_TMK_TICKET_D,  ATG_TMK_TICKET_L WHERE  ATG_TMK_TICKET_D.TICKET_ID =  ATG_TMK_TICKET_L.TICKET_ID AND ATG_TMK_TICKET_D.TICKET_LINE =  ATG_TMK_TICKET_L.LINE AND ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.END_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID and IFNULL(INVOICE_NO,'Y')= 'Y'",V.Local.squery)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat(V.Local.squery," AND ATG_TMK_TICKET_D.BILLING_UNIT <> 'Non-Billable' AND ATG_TMK_TICKET_H.CUSTOMER <> '111111'  ORDER BY ATG_TMK_TICKET_D.TICKET_ID, ATG_TMK_TICKET_L.CONTRACT_ID",V.Local.squery)
+
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.squery)
+
+F.Intrinsic.Control.If(V.odbc.con!rst.EOF,=,False)
+	F.Intrinsic.Variable.loadUDTFromRecordset("con","rst","V.uGlobal.uDetail",False)
+	F.ODBC.con!rst.Close
+	Gui.F_Invoice.lvw1.ClearItems
+	F.Intrinsic.UI.InvokeWaitDialog("Loading Detail Record Ready to be Invoiced")
+	V.uGlobal.uDetail.RedimPreserve(V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound)
+
+	F.Intrinsic.Control.For(V.Local.iX,V.uglobal.uDetail.LBound,V.uGlobal.uDetail.UBound,1)
+		Gui.F_Invoice.lvw1.AddListItem(V.uGlobal.uDetail(v.Local.iX)!Detailid,V.uGlobal.uDetail(v.Local.iX)!Detailid)
+		F.Intrinsic.UI.ChangeWaitStatus("Loading Detail Records",V.Local.iX,1,V.uGlobal.uDetail.UBound)
+			
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,1,V.uGlobal.uDetail(v.Local.iX)!CUSTOMER)
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,2,V.uGlobal.uDetail(v.Local.iX)!SHIPTO)
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,3,V.uGlobal.uDetail(v.Local.iX)!Ticketid)
+
+		F.Intrinsic.String.Concat("select ATG_TMK_ACTIVITIES.DESCRIPTION AS ACTIVITY_DESCRIPTION, ATG_TMK_DISCIPLINES.DESCRIPTION AS DISC_DESCRIPTION from ATG_TMK_ACTIVITIES, ATG_TMK_DISCIPLINES, ATG_TMK_TICKET_L, ATG_TMK_TICKET_D WHERE ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_L.TICKET_ID AND ATG_TMK_TICKET_D.TICKET_LINE = ATG_TMK_TICKET_L.LINE AND ATG_TMK_TICKET_L.ACTIVITY_ID = ATG_TMK_ACTIVITIES.ACTIVITIES_ID AND ATG_TMK_TICKET_L.DISCIPLINE_ID = ATG_TMK_DISCIPLINES.DISCIPLINE_ID AND ATG_TMK_TICKET_D.DETAIL_ID = ",V.uGlobal.uDetail(v.Local.iX)!Detailid,V.Local.squery)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstX",V.Local.squery)
+
+		F.Intrinsic.Control.If(V.ODBC.con!rstX.eof,=,False)
+			V.uGlobal.uDetail(v.Local.iX)!Activitydesc.Set(V.ODBC.con!rstX.FieldValtrim!ACTIVITY_DESCRIPTION)
+			V.uGlobal.uDetail(v.Local.iX)!DisciplineDesc.Set(V.ODBC.con!rstX.FieldValtrim!DISC_DESCRIPTION)
+			Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,4,V.ODBC.con!rstX.FieldValtrim!ACTIVITY_DESCRIPTION)
+			Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,5,V.ODBC.con!rstX.FieldValtrim!DISC_DESCRIPTION)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstX.Close
+		V.uGlobal.uDetail(v.Local.ix)!bProc.Set(0)
+
+
+
+
+		F.Intrinsic.String.Concat("SELECT * FROM ATG_TMK_PO WHERE PO_ID='",V.uGlobal.uDetail(v.Local.iX)!POID,"'",V.Local.squery)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstX",V.Local.squery)
+		F.Intrinsic.Control.If(V.ODBC.con!rstX.eof,=,False)
+			V.uGlobal.uDetail(v.Local.iX)!PO.Set(V.ODBC.con!rstX.FieldValtrim!PURCHASE_ORDER)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstX.Close
+
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,6,V.uGlobal.uDetail(v.Local.iX)!Billingunit)
+		F.Intrinsic.Control.If(V.uGlobal.uDetail(v.Local.iX)!Billingunit.UCase,=,"HOURS")
+			F.Intrinsic.String.Format(V.uGlobal.uDetail(v.Local.iX)!Hours,"0.0000",V.Local.fValue)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.uGlobal.uDetail(v.Local.iX)!Bvalue,"0.0000",V.Local.fValue)
+		F.Intrinsic.Control.endif
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,7,V.Local.fValue)
+		Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,8,V.uGlobal.uDetail(v.Local.iX)!Enddate)
+
+		F.Intrinsic.Control.If(V.Screen.F_Date!chkShowINvoiced.Value,=,1)
+			Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,9,V.uGlobal.uDetail(v.Local.iX)!Invoiceno)
+			Gui.F_Invoice.lvw1.SetListItemSubItemText(V.uGlobal.uDetail(v.Local.iX)!Detailid,10,V.uGlobal.uDetail(v.Local.iX)!InvoiceDate)
+		F.Intrinsic.Control.endif
+		F.Intrinsic.string.ConvertToString(V.uGlobal.uDetail(v.Local.iX)!PO,V.uGlobal.uDetail(v.Local.iX)!PO)
+
+	F.Intrinsic.Control.Next(V.Local.iX)
+	F.Intrinsic.ui.CloseWaitDialog
+
+	Gui.F_Invoice..Show
+
+F.Intrinsic.Control.Else
+
+	F.Intrinsic.UI.Msgbox("No Records Found")
+	F.ODBC.con!rst.Close
+	Gui.F_Date.cmdSelect.Enabled(true)
+
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.loadDetailRecords.End
+
+program.sub.f_date_unload.start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+program.sub.f_date_unload.end
+
+program.sub.cmdinvoice_click.start
+V.Local.ix.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.sRet.Declare(String)
+
+
+Gui.F_Invoice.lvw1.RetrieveCheckedListItems(V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+F.Intrinsic.Control.For(V.Local.iC,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+	F.Intrinsic.control.For(V.Local.ix,V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound,1)
+		
+		F.Intrinsic.Control.If(V.local.sRet(v.Local.iC).Long,=,V.uGlobal.uDetail(v.Local.ix)!Detailid.Long)
+			V.uGlobal.uDetail(v.Local.ix)!bProc.Set(1)
+			F.Intrinsic.Control.ExitFor(V.Local.ix)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.ix)
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.CallSub(Processinvoices)
+
+
+program.sub.cmdinvoice_click.end
+
+program.sub.cmdinvoiceall_click.start
+V.Local.ix.Declare(Long)
+
+F.Intrinsic.control.For(V.Local.ix,V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound,1)
+	V.uGlobal.uDetail(v.Local.ix)!bProc.Set(1)
+F.Intrinsic.Control.Next(V.Local.ix)
+F.Intrinsic.Control.CallSub(Processinvoices)
+
+
+program.sub.cmdinvoiceall_click.end
+
+program.sub.f_invoice_unload.start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+program.sub.f_invoice_unload.end
+
+Program.Sub.GetNextOrderNo.Start
+V.Local.iOrderNo.Declare(Long)
+
+''.ODBC.Connection!Con.OpenRecordsetRO("rst","SELECT MAX(ORDER_NO) AS MAXORDER from ORDER_BOOKING")
+F.ODBC.Connection!Con.OpenRecordsetRO("rst","select LEFT(SALESPERSON,7) as MAXORDER from SALESPEOPLE WHERE KEY1 = 'ORD' AND KEY2 = 'NUM'")
+
+V.Local.iorderno.Set(V.Odbc.Con!rst.FieldVal!MAXORDER)
+F.Intrinsic.Math.Add(V.Local.iorderno,1,V.Local.iorderno)
+F.ODBC.Con!rst.Close
+
+F.Intrinsic.Variable.AddRV("iOrderNo",V.Local.iOrderNo)
+
+
+Program.Sub.GetNextOrderNo.End
+
+Program.Sub.UpdateDetailRecord.Start
+V.Local.sTemp.Declare(String)
+V.Local.sArgs.Declare(String)
+V.Local.ix.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.fValue.Declare(Float)
+
+F.Intrinsic.String.Split(V.args.iDetailID,"*!*",V.Local.sArgs)
+
+F.Intrinsic.Control.For(V.Local.iC,V.local.sArgs.LBound,V.Local.sArgs.UBound,1)
+
+	F.Intrinsic.String.Concat("SELECT * FROM ATG_TMK_TICKET_D WHERE DETAIL_ID='",V.local.sArgs(v.Local.iC),"' ",V.Local.squery)
+	
+
+	F.ODBC.Connection!con.OpenRecordsetRW("RSTTICKETIN",V.Local.squery)
+	F.Intrinsic.Control.If(V.ODBC.con!RSTTICKETIN.EOF,=,False)
+		F.Intrinsic.String.LPad(V.args.orderid,"0",7,V.Local.stemp)
+		F.ODBC.con!RSTTICKETIN.Set!INVOICE_NO(V.local.stemp)
+		F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD",V.Local.stemp)
+		F.ODBC.con!RSTTICKETIN.Set!INVOICE_DATE(V.Local.stemp)
+		F.ODBC.con!RSTTICKETIN.Set!INVOICE_TIME(V.Ambient.Now)
+		F.Intrinsic.String.Concat("SELECT CONTRACT_RATE FROM ATG_TMK_TICKET_L WHERE TICKET_ID='",V.ODBC.con!RSTTICKETIN.FieldVal!TICKET_ID,"' AND LINE='",V.ODBC.con!RSTTICKETIN.FieldVal!TICKET_LINE,"'",V.Local.squery)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstTicket",V.Local.squery)
+		F.Intrinsic.Control.If(V.ODBC.con!rstTicket.EOF,=,False)
+			F.Intrinsic.String.UCase(V.ODBC.con!RSTTICKETIN.FieldValTrim!BILLING_UNIT,V.Local.sTemp)
+			F.Intrinsic.Control.If(V.Local.sTemp,=,"HOURS")
+				F.Intrinsic.Math.Mult(V.ODBC.con!RSTTICKET.FieldValTrim!CONTRACT_Rate,V.ODBC.con!RSTTICKETIN.FieldValTrim!Hours,V.local.fvalue)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Math.Mult(V.ODBC.con!RSTTICKET.FieldValTrim!CONTRACT_Rate,V.ODBC.con!RSTTICKETIN.FieldValTrim!B_Value,V.local.fvalue)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.string.Format(V.Local.fValue,"0.0000",V.Local.sTemp)
+			F.ODBC.con!rstTicketIn.Set!INVOICE_AMOUNT(V.local.stemp)
+		F.Intrinsic.Control.Else
+			F.ODBC.con!rstTicketIn.Set!INVOICE_AMOUNT(V.Args.iAmount)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstTicket.Close
+
+		F.ODBC.con!rstTicketIn.Set!WORK_COMPLETE_FLAG(False)
+		F.ODBC.con!RSTTICKETIN.Update
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.con!RSTTICKETIN.Close
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Program.Sub.UpdateDetailRecord.End
+
+Program.Sub.GetInvoiceFormat.Start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT * FROM ATG_CUST_INV_FORMAT WHERE CUSTOMER='",V.args.sCustomer,"' AND SHIPTTO='",V.args.sShipto,"' ",V.Local.sSQL)
+
+F.ODBC.Connection!con.OpenRecordsetRO("RSTFORMAT",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!RSTFORMAT.EOF,=,True)
+	F.ODBC.con!RSTFORMAT.Close
+	F.Intrinsic.String.Concat("SELECT * FROM ATG_CUST_INV_FORMAT WHERE CUSTOMER='",V.args.sCustomer,"'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("RSTFORMAT",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!RSTFORMAT.EOF,=,True)
+		'TODO: Warn user mode not setup for customer
+		F.Intrinsic.Variable.AddRV("iMode",1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.AddRV("iMode",V.ODBC.con!RSTFORMAT.FieldVal!INV_FORMAT)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!RSTFORMAT.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.Variable.AddRV("iMode",V.ODBC.con!RSTFORMAT.FieldVal!INV_FORMAT)
+	F.ODBC.con!RSTFORMAT.Close
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.GetInvoiceFormat.End
+
+Program.Sub.ProcessInvoice.Start
+V.Local.sOrder.Declare(String)
+V.Local.iPos.Declare(Long)
+V.Local.sTemp.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.sDec.Declare(String)
+V.Local.fBilled.Declare(Float)
+V.Local.dateTemp.Declare(Date)
+V.Local.sFlag.Declare(String)
+
+F.Intrinsic.Variable.AddRV("bSuccess",False)
+
+V.Local.iPos.Set(V.Args.ipos)
+
+
+'Customer
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!Customer," ",7,V.Local.sTemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,"O",V.Local.sTemp,V.Local.sOrder)
+'OrderNo
+F.Intrinsic.String.LPad(V.args.iorderid,"0",7,V.Local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.Local.sTemp,V.Local.sOrder)
+'Freight
+F.Intrinsic.String.RPad(" "," ",12,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Due Date
+F.Intrinsic.String.RPad(" "," ",8,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Order Header Date
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.local.iPos)!Enddate.IsDate,=,True)
+	F.Intrinsic.string.Format(V.uGlobal.uProc(v.local.iPos)!Enddate,"YYYYMMDD",V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.string.Replace(V.uglobal.uProc(v.local.iPos)!Enddate,"-","",V.Local.sTemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",8,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'User Field Block char 30 x5 Header
+F.Intrinsic.String.RPad(""," ",150,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'User ID
+
+F.Intrinsic.String.RPad("SUPERVSR"," ",8,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'PO
+
+F.Intrinsic.String.RPad(V.uGlobal.uProc(v.local.iPos)!PO.string," ",32,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Ship Via
+F.Intrinsic.String.RPad(""," ",26,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+'ShipName
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BNAME," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 1
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BADD1," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 2
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BADD2," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 3
+F.Intrinsic.String.Concat(V.uglobal.uProc(v.local.iPos)!BCITY,", ",V.uglobal.uProc(v.local.iPos)!BSTATE," ",V.uglobal.uProc(v.local.iPos)!BZIP,V.local.stemp)
+F.Intrinsic.String.Left(V.local.stemp,30,V.Local.sTemp)
+F.Intrinsic.String.RPad(V.Local.stemp," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 4 (CIty zip etc)
+
+'F.Intrinsic.String.Concat(V.uglobal.uProc(v.local.iPos)!BCITY,", ",V.uglobal.uProc(v.local.iPos)!BSTATE," ",V.uglobal.uProc(v.local.iPos)!BZIP,V.local.stemp)
+F.Intrinsic.String.RPad(""," ",43,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+'Att. \\\\ Buyer
+F.Intrinsic.String.RPad(""," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Filler
+F.Intrinsic.String.RPad(""," ",11,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Order Type & filler
+F.Intrinsic.String.RPad("X"," ",242,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+V.local.stemp.Set(V.uGlobal.uProc(v.Local.iPos)!BillingValue)
+
+F.Intrinsic.Control.If(V.local.stemp.Trim,=,"")
+	V.local.stemp.Set(1)
+F.Intrinsic.Control.elseIf(V.local.stemp.Trim,=,"0")
+	V.local.stemp.Set(1)
+F.Intrinsic.Control.EndIf
+V.Local.fBilled.Set(V.Local.sTemp)
+'
+
+F.Intrinsic.String.Replace(V.local.stemp,"-","",V.local.stemp)
+F.Intrinsic.String.Format(V.local.stemp,"0.00",V.local.stemp)
+F.Intrinsic.String.split(V.local.stemp,".",V.Local.sDec)
+F.Intrinsic.String.LPad(V.Local.sDec(0),"0",9,V.Local.sDec(0))
+F.Intrinsic.String.RPad(V.Local.sDec(1),"0",4,V.Local.sDec(1))
+F.Intrinsic.String.Concat(V.Local.sDec(0),V.Local.sDec(1),V.local.stemp)
+'F.Intrinsic.String.Replace(V.local.stemp.trim,".","",V.local.stemp)
+'F.Intrinsic.String.LPad(V.local.stemp,"0",9,V.local.stemp)
+'F.Intrinsic.String.RPad(V.local.stemp,"0",13,V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp,"0",23,V.local.stemp)
+
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,"EA",V.Local.sOrder)
+'Part
+F.Intrinsic.String.RPad("Contract"," ",38,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Loc
+F.Intrinsic.String.RPad(" "," ",2,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Price
+V.local.stemp.Set(V.uGlobal.uProc(v.local.iPos)!Rate)
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.Local.iPos)!Rate,=,0)
+	V.Local.sFlag.Set("1")
+F.Intrinsic.Control.Else
+	V.Local.sFlag.Set("")
+F.Intrinsic.Control.endif
+F.Intrinsic.String.Replace(V.local.stemp,"-","",V.local.stemp)
+F.Intrinsic.String.Format(V.local.stemp,"0.00",V.local.stemp)
+F.Intrinsic.String.split(V.local.stemp,".",V.Local.sDec)
+F.Intrinsic.String.LPad(V.Local.sDec(0),"0",10,V.Local.sDec(0))
+F.Intrinsic.String.RPad(V.Local.sDec(1),"0",6,V.Local.sDec(1))
+F.Intrinsic.String.Concat(V.Local.sDec(0),V.Local.sDec(1),V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",32,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+'Cost
+F.Intrinsic.String.RPad(" "," ",16,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Part Desc
+F.Intrinsic.String.Left(V.uGlobal.uProc(v.local.iPos)!ActivityID,30,V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'PL
+F.Intrinsic.String.RPad("RT"," ",3,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Oder Line Date
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.local.iPos)!Startdate.IsDate,=,True)
+	F.Intrinsic.string.Format(V.uGlobal.uProc(v.local.iPos)!Startdate,"YYYYMMDD",V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+'F.Intrinsic.string.Replace(V.uglobal.uProc(v.local.iPos)!startdate,"-","",V.Local.sTemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",8,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Order Promise Date
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.local.iPos)!Enddate.IsDate,=,True)
+	F.Intrinsic.string.Format(V.uGlobal.uProc(v.local.iPos)!Enddate,"YYYYMMDD",V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+'F.Intrinsic.string.Replace(V.uglobal.uProc(v.local.iPos)!Enddate,"-","",V.Local.sTemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",8,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'User field block Lines
+F.Intrinsic.String.Left(V.uglobal.uProc(v.local.iPos)!DisciplineID,30,V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'bILLING UNIT
+F.Intrinsic.String.Left(V.uglobal.uProc(v.local.iPos)!BILLINGUNIT,30,V.local.stemp)
+F.Intrinsic.String.RPad(V.Local.stemp," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+
+'location
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!SLOCATION," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!ContractID," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+F.Intrinsic.String.RPad(""," ",30,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+'ext amt
+F.Intrinsic.String.RPad(" "," ",16,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Must Deliver by Date
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.local.iPos)!Enddate.IsDate,=,True)
+	F.Intrinsic.string.Format(V.uGlobal.uProc(v.local.iPos)!Enddate,"YYYYMMDD",V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+F.Intrinsic.Control.If(V.uGlobal.uProc(v.local.iPos)!Enddate.IsDate,=,True)
+	F.Intrinsic.string.Format(V.uGlobal.uProc(v.local.iPos)!Enddate,"YYYYMMDD",V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Rusable Data type
+F.Intrinsic.String.Concat(V.Local.sOrder," ",V.Local.sOrder)
+
+'Order Line Text
+'F.Intrinsic.String.RPad(V.Local.sNameCustomer," ",300,V.Local.sTemp)
+F.Intrinsic.String.RPad(""," ",300,V.Local.sTemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.Local.sTemp,V.Local.sOrder)
+'Tax & Line Type
+F.Intrinsic.String.RPad(" "," ",3,V.Local.sTemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.Local.sTemp,V.Local.sOrder)
+'Negative Flag for discount  & Filler 'add 1 here maybe
+F.Intrinsic.String.RPad(V.Local.sFlag," ",164,V.Local.sTemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.Local.sTemp,V.Local.sOrder)
+
+
+'International Shipment
+F.Intrinsic.String.RPad("","Y",1,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Name Shipment
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!SNAME," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 1 Shipment
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!SADD1," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 2 Shipment
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!SADD2," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 3 Shipment
+F.Intrinsic.String.RPad(""," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 4 Shipment
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!SCity," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 5 Shipment
+F.Intrinsic.String.Concat(V.uglobal.uProc(v.local.iPos)!sState," ",V.uglobal.uProc(v.local.iPos)!sZip,V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'City State Zip Country
+F.Intrinsic.String.RPad(" "," ",65,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Attn Shipment
+F.Intrinsic.String.RPad(""," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+'International Billing
+F.Intrinsic.String.RPad("","Y",1,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Name Billing
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BNAME," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 1 Billing
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BADD1," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address2Billing
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BADD2," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address3Billing
+F.Intrinsic.String.RPad(""," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 4 Billing
+F.Intrinsic.String.RPad(V.uglobal.uProc(v.local.iPos)!BCity," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+'Address 5 Billing
+F.Intrinsic.String.Concat(V.uglobal.uProc(v.local.iPos)!BState," ",V.uglobal.uProc(v.local.iPos)!BZip,V.local.stemp)
+F.Intrinsic.String.RPad(V.local.stemp," ",40,V.local.stemp)
+F.Intrinsic.String.Concat(V.Local.sOrder,V.local.stemp,V.Local.sOrder)
+
+
+F.Intrinsic.Variable.AddRV("bSuccess",True)
+F.Intrinsic.Variable.AddRV("BilledAmount",V.Local.fBilled)
+'V.uGlobal.uProc(v.local.iPos)!Invoiceamount.Set(V.Local.fBilled)
+V.uGlobal.uProc(v.local.iPos)!InvoiceNo.Set(V.args.iorderid)
+
+F.Intrinsic.Variable.AddRV("sInvoice",V.Local.sOrder)
+
+
+
+Program.Sub.ProcessInvoice.End
+
+Program.Sub.InvokeUpload.Start
+V.Local.sfiledir.Declare(String)
+V.Local.sCommand.Declare(String)
+
+F.Intrinsic.File.ChangeDirectory(V.Caller.SP2Dir)
+'F.Intrinsic.String.Concat(V.caller.TempDir,"\","LD",V.Caller.Terminal,V.Caller.CompanyCode,V.Local.sfiledir)
+'F.Intrinsic.File.String2File(V.Local.sfiledir,V.Args.sData)
+'F.Intrinsic.UI.Msgbox(V.Local.sfiledir,"Please send file:")
+
+F.Intrinsic.String.Concat(V.Caller.FilesDir,"\","LD",V.Caller.Terminal,V.Caller.CompanyCode,V.Local.sfiledir)
+F.Intrinsic.File.String2File(V.Local.sfiledir,V.Args.sData)
+F.Intrinsic.String.Concat("LD",V.Caller.Terminal,V.Caller.CompanyCode,V.Local.sfiledir)
+F.Intrinsic.String.Concat(V.Ambient.DblQuote,V.Caller.CompanyCode,"SUPERVSR",V.Local.sfiledir,V.Ambient.DblQuote,V.Local.sCommand)
+
+
+
+F.Intrinsic.Task.LaunchGSSSync("ORDUPCM3"," -c",V.Local.scommand)
+
+Program.Sub.InvokeUpload.End
+
+Program.Sub.SeekDetailID.Start
+V.Local.ix.Declare(Long)
+
+F.Intrinsic.variable.AddRV("iPos",-1)
+
+F.Intrinsic.control.For(V.Local.ix,V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound,1)
+	F.Intrinsic.Control.If(V.args.value,=,V.uGlobal.uDetail(v.Local.ix)!Detailid.Long)
+		F.Intrinsic.variable.AddRV("iPos",V.Local.ix)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.ix)
+
+
+
+
+Program.Sub.SeekDetailID.End
+
+Program.Sub.PrepareSum.Start
+V.Local.iLine.Declare(Long,-1)
+V.Local.iID.Declare(Long,-1)
+V.Local.iC.Declare(Long)
+V.Local.iUB.Declare(Long)
+V.Local.stemp.Declare(String)
+V.Local.bSet.Declare(Boolean)
+V.Local.bValue.Declare(Boolean)
+V.Local.squery.Declare(String)
+V.Local.ftemp.Declare(Float)
+V.Local.iPos.Declare(Long)
+V.Local.bret.Declare(Boolean)
+V.Local.fAmount.Declare(Float)
+
+V.uGlobal.uProc.Redim(V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound)
+V.local.iub.Set(0)
+F.Intrinsic.Ui.InvokeWaitDialog("Summarizing Data")
+
+
+
+
+F.Intrinsic.Control.For(V.Local.iC,V.uGlobal.uDetail.LBound,V.uGlobal.uDetail.UBound,1)
+	F.Intrinsic.Control.If(V.uGlobal.uDetail(v.Local.iC)!bProc,=,1)
+		F.Intrinsic.Ui.ChangeWaitStatus("Summarizing Data",V.Local.iC,1,V.uGlobal.uDetail.UBound)
+		F.Intrinsic.Control.If(V.Local.iID,=,-1)
+			V.local.iid.set(V.uglobal.uDetail(v.Local.iC)!Ticketid)
+			V.local.iLine.set(V.uglobal.uDetail(v.Local.iC)!ContractID)
+			V.Local.iPos.Set(0)
+			V.Local.bSet.Set(True)
+
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iID,<>,V.uglobal.uDetail(v.Local.iC)!Ticketid)
+			V.local.iid.set(V.uglobal.uDetail(v.Local.iC)!Ticketid)
+			V.local.iLine.set(V.uglobal.uDetail(v.Local.iC)!ContractID)
+			F.Intrinsic.Math.Add(V.local.iub,1,V.Local.iUB)
+			V.Local.bSet.Set(True)
+			
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iLine,<>,V.uglobal.uDetail(v.Local.iC)!contractID)
+				V.local.iLine.set(V.uglobal.uDetail(v.Local.iC)!ContractID)
+				F.Intrinsic.Math.Add(V.local.iub,1,V.Local.iUB)
+				V.Local.bSet.Set(True)
+				
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		V.Local.iPos.Set(V.Local.iUB)
+		
+
+		F.Intrinsic.String.Concat(V.uGlobal.uProc(v.Local.iPos)!sDetailPos,V.uGlobal.uDetail(v.Local.iC)!Detailid,"*!*",V.uGlobal.uProc(v.Local.iPos)!sDetailPos)
+
+		F.Intrinsic.Control.If(V.Local.bSet,=,True)
+			V.uGlobal.uProc(v.local.iPos)!Ticketid.Set(V.uGlobal.uDetail(v.Local.iC)!Ticketid)
+			V.uGlobal.uProc(v.local.iPos)!TicketLine.Set(V.uGlobal.uDetail(v.Local.iC)!TicketLine)
+			V.uGlobal.uProc(v.local.iPos)!ActivityID.Set(V.uGlobal.uDetail(v.Local.iC)!ActivityDesc)
+			V.uGlobal.uProc(v.local.iPos)!DisciplineID.Set(V.uGlobal.uDetail(v.Local.iC)!DisciplineDesc)
+			V.uGlobal.uProc(v.local.iPos)!ShipTo.Set(V.uGlobal.uDetail(v.Local.iC)!ShipTo)
+			V.uGlobal.uProc(v.local.iPos)!Customer.Set(V.uGlobal.uDetail(v.Local.iC)!customer)
+			V.uGlobal.uProc(v.local.iPos)!Billingunit.Set(V.uGlobal.uDetail(v.Local.iC)!Billingunit)
+			V.uGlobal.uProc(v.local.iPos)!startdate.Set(V.uGlobal.uDetail(v.Local.iC)!startdate)
+			V.uGlobal.uProc(v.local.iPos)!enddate.Set(V.uGlobal.uDetail(v.Local.iC)!enddate)
+			V.uGlobal.uProc(v.local.iPos)!POID.Set(V.uGlobal.uDetail(v.Local.iC)!POID)
+			V.uGlobal.uProc(v.local.iPos)!PO.Set(V.uGlobal.uDetail(v.Local.iC)!PO)
+			V.uGlobal.uProc(v.local.iPos)!contractid.Set(V.uGlobal.uDetail(v.Local.iC)!contractid)
+			V.uGlobal.uProc(v.local.iPos)!Assigned.Set(False)
+
+			F.Intrinsic.Control.CallSub(Getinvoiceformat,"scustomer",V.uGlobal.uProc(v.local.iPos)!Customer,"sShipTo",V.uGlobal.uProc(v.local.iPos)!Shipto)
+			F.Intrinsic.Variable.ArgExists("imode",V.Local.bRet)
+			F.Intrinsic.Control.If(V.Local.bRet,=,True)
+				V.uGlobal.uProc(v.local.iPos)!Mode.Set(V.Args.imode)
+			F.Intrinsic.Control.EndIf
+
+
+			F.Intrinsic.String.Concat("SELECT * from V_CUSTOMER_MASTER WHERE CUSTOMER='",V.uglobal.uProc(v.local.iPos)!CUSTOMER,"'",V.Local.squery)
+
+			F.ODBC.Connection!con.OpenRecordsetRO("rstShipto",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.con!rstShipto.EOF,=,False)
+				V.uglobal.uProc(v.local.iPos)!BName.Set(V.ODBC.con!rstShipto.FieldValTrim!NAME_CUSTOMER)
+				V.uglobal.uProc(v.local.iPos)!BAdd1.Set(V.ODBC.con!rstShipto.FieldValTrim!ADDRESS1)
+				V.uglobal.uProc(v.local.iPos)!BAdd2.Set(V.ODBC.con!rstShipto.FieldValTrim!ADDRESS2)
+				V.uglobal.uProc(v.local.iPos)!BCity.Set(V.ODBC.con!rstShipto.FieldValTrim!City)
+				V.uglobal.uProc(v.local.iPos)!BState.Set(V.ODBC.con!rstShipto.FieldValTrim!STATE)
+				V.uglobal.uProc(v.local.iPos)!BZip.Set(V.ODBC.con!rstShipto.FieldValTrim!ZIP)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstShipto.Close
+			
+			F.Intrinsic.String.Concat("SELECT CUSTOMER_NAME, SHIP_ADDRESS1,SHIP_ADDRESS2, SHIP_CITY, SHIP_STATE,SHIP_ZIP FROM V_OE_MULTI_SHIP WHERE CUSTOMER='",V.uglobal.uProc(v.local.iPos)!CUSTOMER,"' AND SHIP_SEQ='",V.uglobal.uProc(v.local.iPos)!SHIPTO,"' ",V.Local.sQuery)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstShipto",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.con!rstShipto.EOF,=,False)
+				V.uglobal.uProc(v.local.iPos)!SName.Set(V.ODBC.con!rstShipto.FieldValTrim!CUSTOMER_NAME)
+				V.uglobal.uProc(v.local.iPos)!SLOCATION.Set(V.ODBC.con!rstShipto.FieldValTrim!CUSTOMER_NAME)
+
+				V.uglobal.uProc(v.local.iPos)!sAdd1.Set(V.ODBC.con!rstShipto.FieldValTrim!SHIP_ADDRESS1)
+				V.uglobal.uProc(v.local.iPos)!sAdd2.Set(V.ODBC.con!rstShipto.FieldValTrim!SHIP_ADDRESS2)
+				V.uglobal.uProc(v.local.iPos)!sCity.Set(V.ODBC.con!rstShipto.FieldValTrim!SHIP_City)
+				V.uglobal.uProc(v.local.iPos)!sState.Set(V.ODBC.con!rstShipto.FieldValTrim!SHIP_STATE)
+				V.uglobal.uProc(v.local.iPos)!sZip.Set(V.ODBC.con!rstShipto.FieldValTrim!SHIP_ZIP)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Concat("SELECT NAME_CUSTOMER_SHIP, ADDRESS1_SHIP,ADDRESS2_SHIP,City_SHIP,STATE_SHIP,CODE_ZIP_SHIP FROM V_CUSTOMER_SHIPTO WHERE CUSTOMER='",V.uglobal.uProc(v.local.iPos)!CUSTOMER,"' ",V.Local.sQuery)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstShiptoCust",V.Local.squery)
+				F.Intrinsic.Control.If(V.ODBC.con!rstShiptoCust.EOF,=,False)
+					V.uglobal.uProc(v.local.iPos)!SLOCATION.Set(V.ODBC.con!rstShiptoCust.FieldValTrim!NAME_CUSTOMER_SHIP)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstShiptoCust.Close
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstShipto.Close
+
+			F.Intrinsic.Control.If(V.uGlobal.uProc(v.Local.iPos)!SADD1,=,"")
+
+				F.Intrinsic.String.Concat("SELECT NAME_CUSTOMER_SHIP, ADDRESS1_SHIP,ADDRESS2_SHIP,City_SHIP,STATE_SHIP,CODE_ZIP_SHIP FROM V_CUSTOMER_SHIPTO WHERE CUSTOMER='",V.uglobal.uProc(v.local.iPos)!CUSTOMER,"' ",V.Local.sQuery)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstShiptoCust",V.Local.squery)
+				F.Intrinsic.Control.If(V.ODBC.con!rstShiptoCust.EOF,=,False)
+					V.uglobal.uProc(v.local.iPos)!sName.Set(V.ODBC.con!rstShipToCust.FieldValTrim!NAME_CUSTOMER_SHIP)
+					V.uglobal.uProc(v.local.iPos)!sAdd1.Set(V.ODBC.con!rstShipToCust.FieldValTrim!ADDRESS1_SHIP)
+					V.uglobal.uProc(v.local.iPos)!sAdd2.Set(V.ODBC.con!rstShipToCust.FieldValTrim!ADDRESS2_SHIP)
+					V.uglobal.uProc(v.local.iPos)!sCity.Set(V.ODBC.con!rstShipToCust.FieldValTrim!City_SHIP)
+					V.uglobal.uProc(v.local.iPos)!sState.Set(V.ODBC.con!rstShipToCust.FieldValTrim!STATE_SHIP)
+					V.uglobal.uProc(v.local.iPos)!sZip.Set(V.ODBC.con!rstShipToCust.FieldValTrim!CODE_ZIP_SHIP)
+				F.Intrinsic.Control.EndIf
+
+				F.ODBC.con!rstShiptoCust.Close
+			
+			F.Intrinsic.Control.EndIf
+'			F.ODBC.con!rstShipto.Close
+			'Price
+
+
+			F.Intrinsic.String.Concat("SELECT CONTRACT_RATE FROM ATG_TMK_TICKET_L WHERE TICKET_ID='",V.uGlobal.uProc(v.local.iPos)!TICKETID,"' AND LINE='",V.uGlobal.uProc(v.local.iPos)!TICKETLINE,"'",V.Local.squery)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstTicket",V.Local.squery)
+			F.Intrinsic.Control.If(V.ODBC.con!rstTicket.EOF,=,False)
+				V.uGlobal.uProc(v.local.iPos)!Rate.Set(V.ODBC.con!rstTicket.FieldValFloat!CONTRACT_RATE)
+				V.uGlobal.uProc(v.local.iPos)!InvoiceAmount.Set(V.uGlobal.uProc(v.local.iPos)!Rate)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstTicket.Close
+		
+			V.Local.bSet.Set(False)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.uGlobal.uDetail(v.Local.iC)!Billingunit.UCase,=,"HOURS")
+			F.Intrinsic.Math.Add(V.uGlobal.uProc(v.local.iPos)!BillingValue,V.uGlobal.uDetail(v.Local.iC)!Hours,V.uGlobal.uProc(v.local.iPos)!BillingValue)
+			F.Intrinsic.Control.If(V.uGlobal.uDetail(v.Local.iC)!Hours,>,0)
+				F.Intrinsic.Math.Mult(V.uGlobal.uProc(v.local.iPos)!Rate,V.uGlobal.uDetail(v.Local.iC)!Hours,V.local.fAmount)
+			F.Intrinsic.Control.Else
+				V.Local.fAmount.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.uGlobal.uProc(v.local.iPos)!BillingValue,V.uGlobal.uDetail(v.Local.iC)!Bvalue,V.uGlobal.uProc(v.local.iPos)!BillingValue)
+			F.Intrinsic.Control.If(V.uGlobal.uDetail(v.Local.iC)!bValue,>,0)
+				F.Intrinsic.Math.Mult(V.uGlobal.uProc(v.local.iPos)!Rate,V.uGlobal.uDetail(v.Local.iC)!bValue,V.local.fAmount)
+			F.Intrinsic.Control.Else
+				V.Local.fAmount.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+
+'		F.Intrinsic.Control.If(V.Local.bvalue,=,True)
+'			F.Intrinsic.Math.Add(V.uGlobal.uProc(v.local.iPos)!BillingValue,V.uGlobal.uDetail(v.Local.iC)!Bvalue,V.uGlobal.uProc(v.local.iPos)!BillingValue)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.Math.Add(V.uGlobal.uProc(v.local.iPos)!BillingValue,V.uGlobal.uDetail(v.Local.iC)!Hours,V.uGlobal.uProc(v.local.iPos)!BillingValue)
+'		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Math.Mult(V.uGlobal.uProc(v.local.iPos)!Rate,V.uGlobal.uProc(v.local.iPos)!billingvalue,V.uGlobal.uProc(v.local.iPos)!InvoiceAmount)
+
+		F.Intrinsic.Control.CallSub(Updatetotalapplied,"iamount",V.local.fAmount,"iDetailID",V.uglobal.uDetail(v.Local.iC)!Detailid,"sPO",V.uGlobal.uDetail(v.Local.iC)!POID,"sInvoiceNo",V.uGlobal.uDetail(v.Local.iC)!InvoiceNo)
+
+
+	'	F.Intrinsic.String.Concat(V.uGlobal.uProc(v.local.iPos)!sDetailPos,V.uglobal.uDetail(v.Local.iC)!Detailid,"*!*",V.uGlobal.uProc(v.local.iPos)!sDetailPos)
+'		F.Intrinsic.Math.Mult(V.uGlobal.uProc(v.local.iPos)!Rate,V.uGlobal.uProc(v.local.iPos)!BillingValue,V.uGlobal.uProc(v.local.iPos)!InvoiceAmount)
+'		F.Intrinsic.String.Format(V.uGlobal.uProc(v.Local.iUB)!Invoiceamount,"0.0000",V.uGlobal.uProc(v.Local.iUB)!Invoiceamount)
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+V.uGlobal.uProc.RedimPreserve(0,V.Local.iUB)
+F.Intrinsic.Debug.DumpVariableList
+
+
+F.Intrinsic.Ui.CloseWaitDialog
+
+Program.Sub.PrepareSum.End
+
+Program.Sub.SeekSumRecord.Start
+V.Local.ix.Declare(Long)
+V.Local.sPos.Declare(String)
+
+F.Intrinsic.variable.AddRV("sCustPos","")
+
+F.Intrinsic.control.For(V.Local.ix,V.uGlobal.uProc.LBound,V.uGlobal.uProc.UBound,1)
+	F.Intrinsic.Control.If(V.uGlobal.uProc(v.Local.ix)!Assigned,=,False)
+		F.Intrinsic.Control.If(V.args.Customer.string,=,V.uGlobal.uProc(v.Local.ix)!Customer)
+			F.Intrinsic.Control.If(V.Args.bShipTo,=,True)
+				F.Intrinsic.Control.If(V.args.ShipTo.String,=,V.uGlobal.uProc(v.Local.ix)!ShipTo)
+					F.Intrinsic.string.Concat(V.Local.sPos,V.Local.ix,"*!*",V.Local.sPos)
+
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.string.Concat(V.Local.sPos,V.Local.ix,"*!*",V.Local.sPos)
+
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.ix)
+
+F.Intrinsic.variable.AddRV("sCustPos",V.Local.sPos)
+
+
+Program.Sub.SeekSumRecord.End
+
+Program.Sub.ProcessGrouping.Start
+V.Local.sPositions.Declare(String)
+V.Local.iPos.Declare(Long)
+V.Local.iCustPos.Declare(Long)
+V.Local.sCustPos.Declare(String)
+V.Local.sInvoice.Declare(String)
+V.Local.bRet.Declare(Boolean)
+V.Local.sorderNo.Declare(String)
+V.Local.iCoP.Declare(Long)
+V.Local.iCP.Declare(Long)
+V.local.sprocess.Declare(String)
+
+F.Intrinsic.ui.InvokeWaitDialog("Processing Invoices By Format")
+V.Local.sMessage.Declare(String)
+
+
+F.Intrinsic.Control.CallSub(Seekgroup,"Mode",V.Args.imode)
+F.Intrinsic.Control.If(V.Args.spos,<>,-1)
+	F.Intrinsic.string.Split(V.Args.spos,"*!*",V.Local.sPositions)
+	F.intrinsic.Control.For(V.Local.iPos,V.Local.sPositions.LBound,V.Local.sPositions.UBound,1)
+		F.Intrinsic.Control.If(V.Local.sPositions(v.Local.iPos),<>,"")
+			V.Local.iCP.Set(V.Local.sPositions(v.Local.iPos))
+
+			F.Intrinsic.String.Concat("Processing Invoices By Format For Customer: ",V.uGlobal.uProc(V.Local.iCP)!Customer,V.Local.sMessage)
+
+			F.Intrinsic.ui.ChangeWaitStatus(V.Local.sMessage,V.Local.iPos,1,V.Local.sPositions.UBound)
+			F.Intrinsic.Control.If(V.Args.bshipto,=,False)
+				F.Intrinsic.Control.CallSub(Seeksumrecord,"Customer",V.uGlobal.uProc(V.Local.iCP)!Customer,"bShipTo",V.Args.bShipto,"SHIPTO","")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.CallSub(Seeksumrecord,"Customer",V.uGlobal.uProc(V.Local.iCP)!Customer,"bShipTo",V.Args.bshipto,"SHIPTO",V.uGlobal.uProc(V.Local.iCP)!Shipto)
+			F.Intrinsic.Control.EndIf
+
+			F.Intrinsic.Control.If(V.Args.sCustPos,<>,"")
+				F.Intrinsic.string.Split(V.Args.sCustpos,"*!*",V.Local.sCustPos)
+				F.Intrinsic.Control.CallSub(Getnextorderno)
+				F.Intrinsic.Variable.ArgExists("iOrderNo",V.Local.bRet)
+				F.Intrinsic.Control.If(V.Local.bRet,=,True)
+					V.Local.sOrderNo.Set(V.Args.iorderNo)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.Local.sInvoice,<>,"")
+					F.Intrinsic.Control.CallSub(Invokeupload,"sData",V.Local.sInvoice)
+					V.Local.sInvoice.Set("")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.For(V.Local.iCustPos,V.local.sCustPos.LBound,V.Local.sCustPos.UBound,1)
+			'		F.Intrinsic.String.Concat(V.Local.sMessage," Record: ",V.uGlobal.uProc(V.Local.sCustPos(v.Local.iCustPos))!DetailID,V.Local.sMessage)
+
+					F.Intrinsic.ui.ChangeWaitStatus(V.Local.sMessage,V.Local.iPos,1,V.Local.sPositions.UBound)
+					F.Intrinsic.Control.If(V.Local.sCustPos(v.Local.iCustPos),<>,"")
+						F.Intrinsic.control.CallSub(Processinvoice,"iPos",V.Local.sCustPos(v.Local.iCustPos),"iOrderID",V.Local.sOrderNo)
+						F.Intrinsic.Variable.argexists("sInvoice",V.Local.bRet)
+						
+						F.Intrinsic.Control.If(V.Local.bRet,=,True)
+							F.Intrinsic.String.Concat(V.Local.sInvoice,V.Args.sinvoice.String,V.ambient.NewLine,V.Local.sInvoice)
+						F.Intrinsic.Control.Endif
+						'build inVoice
+						V.Local.iCoP.Set(V.Local.sCustPos(v.Local.iCustPos))
+						V.uGlobal.uProc(v.Local.iCoP)!Assigned.Set(1)
+						
+						V.Local.sprocess.Set(V.uGlobal.uProc(V.Local.iCoP)!sDetailPos)
+						F.Intrinsic.Control.CallSub(Updatedetailrecord,"OrderID",V.Local.sOrderNo,"iDetailID",V.local.sprocess,"iamount",V.uGlobal.uProc(V.Local.iCP)!Invoiceamount,"SPO",V.uGlobal.uProc(V.Local.iCP)!POID)
+
+					F.Intrinsic.Control.EndIf
+					
+				F.Intrinsic.Control.next(V.Local.iCustPos)
+				'invoke upload
+				
+
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.endif
+
+	F.Intrinsic.Control.Next(V.Local.iPos)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.sInvoice,<>,"")
+	F.Intrinsic.Control.CallSub(Invokeupload,"sData",V.Local.sInvoice)
+	V.Local.sInvoice.Set("")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.ProcessGrouping.End
+
+Program.Sub.SeekGroup.Start
+V.Local.ix.Declare(Long)
+V.Local.sPos.Declare(String)
+
+F.Intrinsic.variable.AddRV("sPos",-1)
+
+F.Intrinsic.control.For(V.Local.ix,V.uGlobal.uProc.LBound,V.uGlobal.uProc.UBound,1)
+	F.Intrinsic.Control.If(V.args.Mode.long,=,V.uGlobal.uProc(v.Local.ix)!Mode)
+		F.Intrinsic.string.Concat(V.Local.sPos,V.Local.ix,"*!*",V.Local.sPos)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.ix)
+F.Intrinsic.variable.AddRV("sPos",V.Local.sPos)
+
+Program.Sub.SeekGroup.End
+
+Program.Sub.ProcessInvoices.Start
+V.Local.squery.Declare(String)
+V.Local.sInvoices.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.sInvoices.Redim(-1,-1)
+V.Local.iUB.Set(-1)
+
+Gui.F_Invoice.cmdInvoice.Enabled(false)
+Gui.F_Invoice.cmdInvoiceAll.Enabled(false)
+Gui.F_Invoice..Enabled(false)
+F.Intrinsic.Control.CallSub(Preparesum)
+
+F.Intrinsic.Control.CallSub(Processgrouping,"iMode",1,"bShipto",False)
+F.Intrinsic.Control.CallSub(Processgrouping,"iMode",0,"bShipto",True)
+F.Intrinsic.Control.CallSub(Processgrouping,"iMode",2,"bShipto",True)
+'
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+V.Local.squery.set("Select DISTINCT  ATG_TMK_TICKET_D.DETAIL_ID")
+f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H,  ATG_TMK_TICKET_D WHERE   ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.START_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID and IFNULL(INVOICE_NO,'Y')= 'Y'",V.Local.squery)
+F.Intrinsic.String.Concat(V.Local.squery," AND ATG_TMK_TICKET_H.CUSTOMER = '111111' ",V.Local.squery)
+
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.squery)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+'	F.Intrinsic.String.Concat("UPDATE  ATG_TMK_TICKET_D SET  INVOICE_NO = -1,  WORK_COMPLETE_FLAG = 0 WHERE DETAIL_ID=",V.ODBC.con!rst.fieldvaltrim!DETAIL_ID,V.Local.squery)
+'	F.ODBC.Connection!con.Execute(V.Local.squery)
+	F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+	F.Intrinsic.Control.If(V.Local.iUB,=,0)
+		V.Local.sInvoices.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Local.sInvoices.RedimPreserve(0,V.Local.iUB)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sInvoices(v.Local.iUB).Set(V.ODBC.con!rst.fieldvaltrim!DETAIL_ID)
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.loop
+F.odbc.con!rst.Close
+'F.Intrinsic.Debug.Stop
+V.Local.squery.set("Select DISTINCT  ATG_TMK_TICKET_D.DETAIL_ID")
+f.intrinsic.string.concat(V.local.squery," FROM ATG_TMK_TICKET_H,  ATG_TMK_TICKET_D WHERE   ATG_TMK_TICKET_D.BILLING_FLAG=1  AND  ATG_TMK_TICKET_D.START_DATE BETWEEN '",V.screen.F_Date!dpFrom.value.pervasivedate,"' and '",V.screen.F_Date!dpTo.value.pervasivedate,"' AND ATG_TMK_TICKET_D.TICKET_ID = ATG_TMK_TICKET_H.TICKET_ID and IFNULL(INVOICE_NO,'Y')= 'Y'",V.Local.squery)
+F.Intrinsic.String.Concat(V.Local.squery," AND ATG_TMK_TICKET_D.BILLING_UNIT = 'Non-Billable' ",V.Local.squery)
+
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.squery)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+'	F.Intrinsic.String.Concat("UPDATE  ATG_TMK_TICKET_D SET  INVOICE_NO = -1,  WORK_COMPLETE_FLAG = 0 WHERE DETAIL_ID=",V.ODBC.con!rst.fieldvaltrim!DETAIL_ID,V.Local.squery)
+'	F.ODBC.Connection!con.Execute(V.Local.squery)
+
+	F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+	F.Intrinsic.Control.If(V.Local.iUB,=,0)
+		V.Local.sInvoices.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Local.sInvoices.RedimPreserve(0,V.Local.iUB)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sInvoices(v.Local.iUB).Set(V.ODBC.con!rst.fieldvaltrim!DETAIL_ID)
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.loop
+
+F.odbc.con!rst.Close
+'F.Intrinsic.Debug.Stop
+'F.Intrinsic.UI.Msgbox("Complete")
+
+F.Intrinsic.Control.If(V.Local.sInvoices.UBound,>,-1)
+	F.Intrinsic.String.RemoveArrayDuplicates(V.Local.sInvoices,V.Local.sInvoices)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.i,0,V.Local.sInvoices.UBound,1)
+'	F.Intrinsic.String.Concat("UPDATE  ATG_TMK_TICKET_D SET  INVOICE_NO = -1,  WORK_COMPLETE_FLAG = 0 WHERE DETAIL_ID=",V.Local.sInvoices(v.Local.i),V.Local.squery)
+'	F.ODBC.Connection!con.Execute(V.Local.squery)
+	F.Intrinsic.String.Concat("SELECT * FROM  ATG_TMK_TICKET_D WHERE DETAIL_ID=",V.Local.sInvoices(v.Local.i),V.Local.squery)
+	F.ODBC.Connection!con.OpenRecordsetRW("rstUpdate",V.Local.squery)
+	F.Intrinsic.Control.If(V.ODBC.con!rstUpdate.EOF,<>,"True")
+		F.ODBC.con!rstUpdate.Set!INVOICE_NO(-1)
+		F.ODBC.con!rstUpdate.Set!WORK_COMPLETE_FLAG(0)
+		F.ODBC.con!rstUpdate.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstUpdate.close
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+Program.Sub.ProcessInvoices.End
+
+Program.Sub.UpdateTotalApplied.Start
+
+V.Local.sTemp.Declare(String)
+V.Local.sArgs.Declare(String)
+V.Local.ix.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.sValue.Declare(Float)
+V.Local.bUpdate.Declare(Boolean)
+V.Local.iPO.Declare(Long)
+
+V.Local.iPO.Set(V.args.sPO)
+'F.Intrinsic.String.Concat("SELECT TOTAL_APPLIED  FROM ATG_TMK_PO WHERE PO_ID='",V.args.sPO,"'",V.Local.squery)
+F.Intrinsic.String.Concat("SELECT TOTAL_APPLIED  FROM ATG_TMK_PO WHERE PO_ID=",V.local.iPO,V.Local.squery)
+
+'F.ODBC.Connection!con.OpenRecordsetRW("rstX",V.Local.squery)
+F.ODBC.Connection!con.OpenRecordsetRO("rstX",V.Local.squery)
+
+V.Local.bUpdate.Set(False)
+F.Intrinsic.Control.If(V.ODBC.con!rstX.eof,=,False)
+	F.Intrinsic.Control.If(V.Args.sInvoiceNo,=,"")
+'		F.Intrinsic.UI.Msgbox(V.Local.sQuery)
+		F.Intrinsic.Math.Add(V.ODBC.con!rstX.FieldValtrim!TOTAL_APPLIED,V.Args.iAmount,V.Local.sValue)
+		F.Intrinsic.String.Format(V.Local.sValue,"##0.000",V.Local.sValue)
+		V.Local.bUpdate.Set(True)
+'		F.Intrinsic.String.Concat("Total Applied is ",V.Local.sValue,V.Local.sQuery)
+'		F.Intrinsic.UI.Msgbox(V.Local.sQuery)
+'		F.ODBC.con!rstX.Set!TOTAL_APPLIED(V.Local.sValue)
+'		F.ODBC.con!rstX.Update
+	F.Intrinsic.Control.Endif
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstX.Close
+
+F.Intrinsic.Control.If(V.Local.bUpdate,=,True)
+	F.Intrinsic.String.Concat("UPDATE ATG_TMK_PO SET TOTAL_APPLIED=",V.Local.sValue," WHERE PO_ID=",V.local.iPO,V.Local.sQuery)
+	F.ODBC.Connection!con.Execute(V.Local.sQuery)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.UpdateTotalApplied.End
+
+
